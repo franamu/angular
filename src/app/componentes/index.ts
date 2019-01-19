@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
 
 	selector: "index",
 	templateUrl: "../vistas/index.html"
-});
+})
 
-export class IndexComponente{}
+export class IndexComponente{} 	
