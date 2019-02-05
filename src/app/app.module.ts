@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+//Agregar http module para trabajar con cabeceras http
+import { HttpClientModule } from '@angular/common/http';
+
+//Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponente } from './componentes/index';
@@ -9,6 +13,11 @@ import { GaleriaComponente } from './componentes/galeria';
 import { MouseComponente } from './componentes/mouse';
 import { ScrollComponente } from './componentes/scroll';
 import { FormularioComponente } from './componentes/formulario';
+import { ApiComponente } from './componentes/api';
+
+//Importamos módulos de ruta
+import { routing, appRoutingProviders } from './app.rutas';
+
 
 @NgModule({
   declarations: [
@@ -18,13 +27,18 @@ import { FormularioComponente } from './componentes/formulario';
     GaleriaComponente,
     MouseComponente,
     ScrollComponente,
-    FormularioComponente
+    FormularioComponente,
+    ApiComponente
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    routing,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  	appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
